@@ -23,10 +23,9 @@ homes = [
 ]
 
 def Sort_homes (hmO)
-
-
-  hm = hmO
+  hm=hmO
   action = nil
+
 
   until action == "exit" do
 
@@ -49,24 +48,45 @@ def Sort_homes (hmO)
       hm = hm.sort { |pr1,pr2| pr1.price <=> pr2.price }
       hm.each { |x| puts " #{x.name} in #{x.city} \n Price:$#{x.price} a night cap#{x.capacity} \n "}
       end
+
       if ps.upcase == "B"
         hm = hm.sort { |pr1,pr2| pr2.price <=> pr1.price }
         hm.each { |x| puts " #{x.name} in #{x.city} \n Price:$#{x.price} a night cap#{x.capacity} \n "}
       end
+
       if ps.upcase == "C"
         puts "define de lowest price"
         lp = gets.chomp
         puts "define de highest price"
         hp = gets.chomp
         hm = hm.select{ |x|  x.price>=lp.to_i && x.price <= hp.to_i }
+        hm = hm.sort { |pr1,pr2| pr1.price <=> pr2.price }
         hm.each { |x| puts " #{x.name} in #{x.city} \n Price:$#{x.price} a night cap#{x.capacity} \n "}
       end
-
     end
 
     if action == "2"
+      puts "Type A for sort from lowest to highest\nType B for sort from highest to lowest\nFor an interval type C "
+      ps = gets.chomp
+      if ps.upcase == "A"
       hm = hm.sort { |cp1,cp2| cp1.capacity <=> cp2.capacity }
       hm.each { |x| puts " #{x.name} in #{x.city} \n Price:$#{x.price} a night cap#{x.capacity} \n "}
+      end
+
+      if ps.upcase == "B"
+        hm = hm.sort { |cp1,cp2| cp2.capacity <=> cp1.capacity }
+        hm.each { |x| puts " #{x.name} in #{x.city} \n Price:$#{x.price} a night cap#{x.capacity} \n "}
+      end
+
+      if ps.upcase == "C"
+        puts "define de lowest capacity"
+        lp = gets.chomp
+        puts "define de highest capacity"
+        hp = gets.chomp
+        hm = hm.select{ |x|  x.capacity>=lp.to_i && x.capacity <= hp.to_i }
+        hm = hm.sort { |cp1,cp2| cp1.capacity <=> cp2.capacity }
+        hm.each { |x| puts " #{x.name} in #{x.city} \n Price:$#{x.price} a night cap#{x.capacity} \n "}
+      end
     end
 
     if action == "3"
@@ -77,9 +97,11 @@ def Sort_homes (hmO)
           n+=1
         end
       place = gets.chomp
-      hm = hm.select { |ct| ct.city == place }
+      hm = hm.select { |ct| ct.city == place.capitalize }
       hm.each { |x| puts " #{x.name} in #{x.city} \n Price:$#{x.price} a night cap#{x.capacity} \n "}
     end
+
+
   end
 end
 
