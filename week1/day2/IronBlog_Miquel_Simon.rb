@@ -49,12 +49,11 @@ class Blog
             else
             action -= (2*nB)
             end
-      elsif a.to_i <= pages && a.to_i >= 0
+      elsif a.to_i <= pages && a.to_i > 0
       action = (a.to_i)*nB-nB
       else
         puts "wrong input"
         action -= nB
-
       end
 #justo antes de acabar el loop
   end
