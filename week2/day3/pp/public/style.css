@@ -1,0 +1,103 @@
+body{
+background: #000000;
+background-size: cover;
+display:flex;
+justify-content:center;
+align-items:center;
+align-content:center;
+flex-direction:column;
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+color:#fff;
+}
+
+
+body.success{
+  background: #009ABC;
+}
+
+img.thegif {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 400px;
+    bottom: 0;
+}
+img.thegif2{
+  max-width:400px;
+}
+
+h1{
+  color:#fff;
+  font-size:2em;
+}
+
+input {
+    box-shadow: none;
+    border: 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 4px;
+    font-size: 2em;
+    overflow: scroll;
+}
+
+h2.result{
+  color:#fff;
+  font-size:5em;
+}
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+
+.result-buttons button {
+    padding: 20px 40px;
+    border: 0;
+    background: #111;
+    margin: 0px 3px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition:all 200ms ease-in-out
+
+}
+button:hover{
+  cursor: pointer;
+  opacity:.8;
+  transition:all 200ms ease-in-out
+}
+
+
+.operation-buttons button {
+    border: 0;
+    background: #111;
+    color: #fff;
+    font-size: 60px;
+    padding: 30px;
+    border-radius: 4px;
+}
+.fa-plus.rotate {
+    transform: rotate(45deg);
+}
+.fa-minus.rotate {
+    transform: rotate(-45deg);
+}
+
+.row.operation-buttons {
+    text-align: center;
+}
+button {
+    padding: 2em 8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    background: turquoise;
+    border: 0;
+    border-radius: 4px;
