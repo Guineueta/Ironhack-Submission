@@ -1,0 +1,32 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<table class="table table-bordered">
+   <tr>
+    <th> Punto </th>
+    <% (@nV+1).times do |x| %>
+      <th> <%= "P-#{(65+x ).chr}" %></th>
+    <% end %>
+  </tr>
+
+  <tr>
+    <th> Momentos </th>
+    <%  @array_momentos.each do |x| %>
+      <th> <%= x[1] %></th>
+    <% end %>
+  </tr>
+
+  <tr>
+    <th> Reacciones </th>
+    <%  @reacciones.each do |x| %>
+      <th> <%= x[1] %></th>
+    <% end %>
+  </tr>
+</table>
+
+
+
+
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>

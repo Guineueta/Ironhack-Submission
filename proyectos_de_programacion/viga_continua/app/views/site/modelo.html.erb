@@ -1,0 +1,28 @@
+
+
+<form action="/solucion" method="POST">
+  <input type="hidden" name="numero_vanos" value="<%= @nV %>" />
+
+  <% @nV.times do |i| %>
+     <h5>Tramo <%="#{i+1}"%></h5>
+    <span>
+      <div class="">
+        <%= "#{(i+65).chr} " " #{(i+66).chr}" %> <br>
+        <%= image_tag("viga_biapoyada.png", :alt => "viga_biapoyada", :class => 'image' ) %>
+        <br>
+        <%= text_field_tag "L#{i}", nil, placeholder: "Longitud Viga #{i+1}(m)", id: "L#{i}" %>
+        <%= number_field_tag "ei#{i}",nil, placeholder: "EI Viga#{i+1}(m)", id: "ei#{i}" %> <br>
+        <% @n.times do |j| %>
+          <%= text_field_tag "p#{i}#{j}", nil, placeholder: "P(KN o KN/m)", id: "p#{i}#{j}", :class => 'carga' %>
+          <%= text_field_tag "c#{i}#{j}", nil, placeholder: "C(m)", id: "c#{i}#{j}", :class => 'carga' %>
+          <%= text_field_tag "l#{i}#{j}", nil, placeholder: "L(m)", id: "l#{i}#{j}", :class => 'carga' %>
+          <br>
+        <% end %>
+        <%= text_field_tag "cargas #{i}", nil, placeholder: "Cargas Viga #{i+1}(m)", id: "cargas #{i}",:class => 'cargas' %> <br>
+      </div>
+    <span>
+  <% end %>
+
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <button type="submit">¡¡GOOO!!</button>
+</form>
